@@ -7,4 +7,4 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - VITE_API_BASE_URL=https://affiliated-ball-reported-encountered.trycloudflare.com
+      - VITE_API_BASE_URL=https://prints-judge-memorial-stan.trycloudflare.com 
