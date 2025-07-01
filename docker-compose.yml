@@ -1,0 +1,10 @@
+services:
+  checkin-checkout-app:
+    build: .
+    ports:
+      - "3000:80"
+    container_name: checkin-checkout-system
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - VITE_API_BASE_URL=https://affiliated-ball-reported-encountered.trycloudflare.com
