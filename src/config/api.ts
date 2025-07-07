@@ -1,7 +1,7 @@
 // API Configuration
 export const API_CONFIG = {
   // Backend API base URL
-  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'https://phentermine-meeting-protecting-disposition.trycloudflare.com ',
+  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'https://examine-selling-mixer-sets.trycloudflare.com',
   
   // API endpoints
   ENDPOINTS: {
