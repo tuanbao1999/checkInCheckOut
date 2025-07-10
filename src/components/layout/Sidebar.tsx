@@ -1,7 +1,12 @@
 import React from 'react';
 import { Layout, Menu, Typography } from 'antd';
 import { 
-  ClockCircleOutlined
+  ClockCircleOutlined,
+  EyeOutlined,
+  EnvironmentOutlined,
+  PictureOutlined,
+  PlayCircleOutlined,
+  GlobalOutlined
 } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -22,6 +27,31 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onCollapse }) => {
       key: '/checkin',
       icon: <ClockCircleOutlined />,
       label: 'Check-in/Check-out',
+    },
+    // {
+    //   key: '/virtual',
+    //   icon: <EyeOutlined />,
+    //   label: 'Virtual Viewer',
+    // },
+    // {
+    //   key: '/halong-tour',
+    //   icon: <EnvironmentOutlined />,
+    //   label: 'Vịnh Hạ Long Tour',
+    // },
+    // {
+    //   key: '/virtual-tour-360',
+    //   icon: <PictureOutlined />,
+    //   label: 'Virtual Tour 360°',
+    // },
+    {
+      key: '/3dvista-embed',
+      icon: <PlayCircleOutlined />,
+      label: '3DVista Player',
+    },
+    {
+      key: '/marzipano-embed',
+      icon: <GlobalOutlined />,
+      label: 'Marzipano Tour',
     },
   ];
 

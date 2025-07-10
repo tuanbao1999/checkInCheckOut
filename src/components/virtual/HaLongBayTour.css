@@ -1,0 +1,250 @@
+.ha-long-tour-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.ha-long-tour-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  padding: 0;
+}
+
+.tour-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.viewer-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.viewer-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.viewer-header .ant-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.viewer-header .ant-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.viewer-header .ant-btn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.location-info {
+  text-align: right;
+  color: white;
+}
+
+.location-info h4 {
+  color: white !important;
+  margin: 0 !important;
+  font-weight: bold;
+}
+
+.panorama-container {
+  height: 500px;
+  width: 100%;
+  position: relative;
+  background: #000;
+}
+
+.panorama-container canvas {
+  border-radius: 0;
+}
+
+.tour-progress {
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+}
+
+.location-details {
+  height: 100%;
+}
+
+.location-details .ant-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.active-location {
+  border: 2px solid #667eea !important;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.tip-item {
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  height: 100%;
+}
+
+.tip-item h5 {
+  margin: 12px 0 8px 0 !important;
+  color: #333;
+}
+
+.tip-item .anticon {
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ha-long-tour-container {
+    padding: 10px;
+  }
+  
+  .viewer-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .location-info {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .panorama-container {
+    height: 300px;
+  }
+  
+  .viewer-header .ant-space {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .viewer-header .ant-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .panorama-container {
+    height: 250px;
+  }
+}
+
+/* Animation Effects */
+.tour-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effects */
+.ant-card-hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar */
+.ha-long-tour-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ha-long-tour-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.ha-long-tour-container::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 4px;
+}
+
+.ha-long-tour-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #667eea;
+}
+
+/* Fullscreen Mode */
+.fullscreen .tour-card {
+  height: 100vh;
+  border-radius: 0;
+  margin: 0;
+}
+
+.fullscreen .panorama-container {
+  height: calc(100vh - 200px);
+}
+
+/* Tag Styling */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.ant-progress-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Button Groups */
+.ant-space {
+  gap: 8px !important;
+}
+
+/* Card Meta */
+.ant-card-meta-title {
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.ant-card-meta-description {
+  color: #666 !important;
+  line-height: 1.5;
+} 
