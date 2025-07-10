@@ -22,7 +22,8 @@ import {
 } from '@ant-design/icons';
 import { toast } from 'react-toastify';
 import { useUserStore } from '../../store/userStore';
-import { getLoginUrl } from '../../config/api';
+import { getGetDayDetailUrl, getLoginUrl } from '../../config/api';
+import dayjs from 'dayjs';
 
 const { Title, Text } = Typography;
 
@@ -65,6 +66,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         
         if (onLogin) {
           onLogin(values);
+          // callGetDayDetailAPI(result.data.token);
         }
       } else {
         toast.error(`❌ ${result.message || 'Đăng nhập thất bại!'}`);
@@ -75,6 +77,28 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const callGetDayDetailAPI = async (token: string) => {
+    const apiUrl = getGetDayDetailUrl();
+    const response = await fetch(apiUrl , {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        header: {
+          token: token
+        },
+        bodyData: {
+          day: "05",
+          month: dayjs().format('MM'),
+          year:  dayjs().format('YYYY')
+        }
+      })
+    });
+    const result = await response.json();
+    console.log('API Response:', result);
   };
 
   return (

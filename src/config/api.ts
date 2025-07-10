@@ -7,6 +7,7 @@ export const API_CONFIG = {
   ENDPOINTS: {
     LOGIN: '/api/admin/get-token',
     CHECK_IN_OUT: '/api/admin/MobileAddCheckInOut',
+    GET_DAY_DETAIL: '/api/admin/get-day-detail',
   }
 };
 
@@ -24,3 +25,12 @@ export const getLoginUrl = (): string => {
 export const getCheckInOutUrl = (): string => {
   return getApiUrl(API_CONFIG.ENDPOINTS.CHECK_IN_OUT);
 }; 
+
+// Helper function to get get-day-detail URL
+export const getGetDayDetailUrl = (): string => {
+  return getApiUrl(API_CONFIG.ENDPOINTS.GET_DAY_DETAIL);
+};
+
+
+
+

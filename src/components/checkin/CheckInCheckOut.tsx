@@ -26,7 +26,7 @@ import {
 import dayjs from 'dayjs';
 import locale from 'antd/locale/en_US';
 import { useUserStore } from '../../store/userStore';
-import { getCheckInOutUrl } from '../../config/api';
+import { getCheckInOutUrl, getGetDayDetailUrl } from '../../config/api';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -364,6 +364,7 @@ const CheckInCheckOut: React.FC = () => {
       toast.error(`❌ ${type === 'checkin' ? 'Check-in' : 'Check-out'} thất bại. Vui lòng thử lại.`);
     }
   }, [currentTime, userStore]);
+
 
   const handleCheckIn = useCallback(async () => {
     // await callCheckInOutAPI('checkin');
