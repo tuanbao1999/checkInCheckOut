@@ -44,12 +44,10 @@ const App: React.FC = () => {
           <Route path="/marzipano-embed/halong-tour" element={<MarzipanoEmbed />} />
           
           {/* Protected routes - require login */}
-          {!isAuthenticated ? (
-            <>
-              <Route path="*" element={<Login onLogin={handleLogin} />} />
-            </>
-          ) : (
-            <Route path="/*" element={
+          <Route path="/*" element={
+            !isAuthenticated ? (
+              <Login onLogin={handleLogin} />
+            ) : (
               <MainLayout onLogout={handleLogout}>
                 <Routes>
                   <Route path="/" element={<Navigate to="/checkin" replace />} />
@@ -60,8 +58,8 @@ const App: React.FC = () => {
                   <Route path="*" element={<Navigate to="/checkin" replace />} />
                 </Routes>
               </MainLayout>
-            } />
-          )}
+            )
+          } />
         </Routes>
         <ToastContainer
           position="top-right"
